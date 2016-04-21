@@ -1,0 +1,4 @@
+Execution time on an array with 10^6 random elements-
+selection sort: well over an hour
+insertion sort: well over an hour
+merge sort: 829.558274464589 seconds (~14 minutes)
