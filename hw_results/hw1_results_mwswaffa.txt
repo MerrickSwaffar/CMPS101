@@ -1,0 +1,19 @@
+mwswaffa scoshea
+Q1 2.75/3
+Incorrect psuedocode(inner and outer loop).
+Time Analysis correct according to your psuedocode.
+
+Q2 0/2
+Proof does not use induction, need to use h(k) to show h(k+1)
+
+Q3 2/2
+In future on part B, show work similar to part A.
+
+Q4 2/2
+Good Work
+
+Q5 2/2
+Good Work
+
+8.75/9
+
