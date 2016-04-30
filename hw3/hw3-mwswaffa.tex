@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{paralist}
+\title{CMPS 101, Spring 2016: HW 1}
+\author{Merrick Swaffar and Siobhan O'Shea}
+\date{29 April 2016}
+
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[Q1:]
+    \begin{itemize}
+        \item a = 7, b = 3, c = 2, case 3 \\
+         $T(n) \leq 7 T(n/3) + n^{2}$ \\
+         $log_37 = 2$\\
+         $T(n) = O(n^{log_37})$
+        \vspace{5mm}    
+        
+        \item a = 7, b = 3, c = 1, case 1 \\
+         $T(n) \leq 7 T(n/3) + n$ \\
+         $log_37 > 1$\\
+         $T(n) = O(n^{log_37})$
+        \vspace{5mm}
+        
+        \item a = 7, b = 3, c = 0, case 1 \\
+         $T(n) \leq 7 T(n/3) + 1$ \\
+         $log_37 > 0$\\
+         $T(n) = O(n^{log_37})$
+        \vspace{5mm}
+        
+        \item Master Theorem cases: \\
+        $T(n) = aT(n/b) + f(n)$\\
+        
+        Case 1 : \\
+        $ f(n) \epsilon O(n^2), c<log_ba \Rightarrow  
+        T(n) \epsilon \theta (n^{log_ba})$\\
+       
+        Case 2 : \\
+        $ f(n) \epsilon \Theta (n^{c}log^{k}n), c = log_ba \Rightarrow 
+        T(n) \epsilon \theta (n^{c}log^{k+1}n)$\\
+      
+        Case 3: \\
+        $f(n) \epsilon \Omega (n^{c}), c > log_ba
+        \Rightarrow 
+        T(n) \epsilon \theta (f(n)) $      
+    \end{itemize}
+
+\vspace{5mm}
+\item[Q2:] 
+\begin{itemize}
+$T(n) \leq 2T(n/2) + \sqrt{n}, T(1)=1$\\
+Prove T(n) $\epsilon$ O(n)\\
+\\
+$T(n)\leq an+b\sqrt{n}\Rightarrow T(n) \epsilon O(n)$, where a and b are sufficiently large constants\\
+\\
+base case:\\
+$T(1) = 1 \leq a(1)+b\sqrt{1}$\\
+for a = 2 and b = 1\\
+\\
+inductive hypothesis:\\
+$T(n/2) \leq a(n/2) + b \sqrt{n/2}$\\
+\\
+induction:\\
+$T(n) \leq 2T(n/2) + \sqrt{n}$\\
+$\hspace*{5mm}\leq 2(a(n/2) + b \sqrt{n/2}) + \sqrt{n}$\\
+$\hspace*{5mm}\leq a(n) + \frac{2}{\sqrt{2}}b \sqrt{n} + \sqrt{n}$\\
+$\hspace*{5mm}\leq a(n) + (\frac{2}{\sqrt{2}}b + 1) \sqrt{n}$\\
+$\hspace*{5mm}\leq a(n) + b\sqrt{n}$\\
+\end{itemize}
+\vspace{5mm}
+
+\item[Q3:] 
+\begin{itemize}
+\item inversions(A)\\
+\hspace*{5mm}n = A.length\\
+\hspace*{5mm}if n $<$ 2\\
+\hspace*{10mm}return 0\\
+\hspace*{5mm}L = A[1, ... , n/2]\\
+\hspace*{5mm}R = A[n/2 + 1, ... , n]\\
+\hspace*{5mm}Count$+$ = inversions(L)\\
+\hspace*{5mm}Count$+$ = inversions(R)\\
+\hspace*{5mm}i = j = k = 1\\
+\hspace*{5mm}while i $<$ L.length or j $<$ R.length\\
+\hspace*{10mm}if L[i] $\leq$ C[j]\\
+\hspace*{10mm}i = i+1\\
+\hspace*{5mm}else\\
+\hspace*{10mm}j = j+1\\
+\hspace*{10mm}count + = L.length - i\\
+\hspace*{5mm}return count\\
+\vspace{1mm}
+
+The time complexity of this algorithm is $\Theta (nlogn)$. You are recursively splitting the array into two sub arrays, then you perform a linear time combine step. Therefore, it's time complexity is governed by the recurrence $T(n) = 2T(n/2) + cn$, just as with merge sort.
+\end{itemize}
+\vspace{5mm}
+
+\item[Q4:] 
+\begin{itemize}
+\item[1.] 
+$k^{th}$smallest(A,k)\\
+\hspace*{5mm}i = partition(A)   //the partition algorithm discussed in class\\
+\hspace*{5mm}if (i = k)\\
+\hspace*{10mm}return A[k]\\
+\hspace*{5mm}n = A.length\\
+\hspace*{5mm}L = A[1, ... , i - 1]\\
+\hspace*{5mm}R = A[i + 1, ... , n]\\
+\hspace*{5mm}if (i $>$ k)\\
+\hspace*{10mm}return $k^{th}$smallest(L, k)\\
+\hspace*{5mm}return $k^{th}$smallest(R, k - i)
+\vspace{2mm}
+\item[2.] 
+In the worst case partition separates the array into two arrays of size 0 and $n-1$. This implies that there are $\sum_{i=1}^{n} (n-1)$ calls to partition, and partition runs in linear time, so the worst case time complexity is $O(n^2)$.
+\vspace{2mm}
+\item[3.]
+randomized-$k^{th}$smallest(A,k)\\
+\hspace*{5mm}n = A.length\\
+\hspace*{5mm}r = random(1 to n)\\
+\hspace*{5mm}swap(A[1] , A[r])\\
+\hspace*{5mm}i = partition(A)   //the partition algorithm discussed in class\\
+\hspace*{5mm}if (i = k)\\
+\hspace*{10mm}return A[k]\\
+\hspace*{5mm}L = A[1, ... , i - 1]\\
+\hspace*{5mm}R = A[i + 1, ... , n]\\
+\hspace*{5mm}if (i $>$ k)\\
+\hspace*{10mm}return $k^{th}$smallest(L, k)\\
+\hspace*{5mm}return $k^{th}$smallest(R, k - i)\\
+
+
+$T(n) \leq \frac{2}{n} [\sum_{s=1}^{n-1} T(S)] + cn$\\
+$T(n) \leq anlog_2n - bn$\\
+\\
+base case:\\
+$n=2$\\
+$c = T(2) \leq a2log_22 - 2b$\\
+$=2a-2b$\\
+$c \leq 2(a-b)$\\
+\\
+induction:\\
+Assume $T(s) \leq aslog_2s - bs \forall  s<n$\\
+$T(n) \leq [\sum_{s=1}^{n-1} (aslog_2s - bs)]+cn$\\
+$\hspace*{5mm}\leq \frac{2a}{n}[\sum_{s=1}^{n-1} (slog_2s)] - \frac{2b}{n}[\sum_{s=1}^{n-1} (s)] + cn$\\
+$\hspace*{5mm}\leq anlog_2n - bn$\\
+\end{itemize}
+\vspace{5mm}
+
+
+\end{description}
+\end{document}
