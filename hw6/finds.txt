@@ -1,0 +1,28 @@
+finds.txt
+This file contains the results of searches from question 3.
+If the key was not found in one of the trees,  its successor in that tree is given.  
+
+asymptotic :
+  found successor in low ratings tree- asyouneed
+  found successor in high ratings tree- at2020
+binary :
+  found successor in low ratings tree- binbr
+  found successor in high ratings tree- binaturae
+complexity :
+  found in low ratings tree
+  found in high ratings tree
+depth :
+  found in low ratings tree
+  found in high ratings tree
+mergesort :
+  found successor in low ratings tree- merging
+  found successor in high ratings tree- merging
+quicksort :
+  found successor in low ratings tree- quickstop
+  found successor in high ratings tree- quickstop
+structure :
+  found in low ratings tree
+  found in high ratings tree
+theta :
+  found successor in low ratings tree- thevey
+  found successor in high ratings tree- thethought
