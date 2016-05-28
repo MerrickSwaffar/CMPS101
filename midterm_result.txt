@@ -1,31 +1,35 @@
 Actual Midterm Score
-Q1:1
-Q2:2.5
-Q3:2.5
-Q4:3
-Q5:1
-Q6:3
-TOTAL:13
+Q1: 1
+Q2: 2.5
+Q3: 2.5
+Q4: 3
+Q5: 1
+Q6: 3
+TOTAL: 13
 
 Half Deficit in Actual Midterm
-Q1:0.5
-Q2:0
-Q4:0.5
-Q5:1.5
-Q6:0.5
+Q1: 0.5
+Q2: 0
+Q4: 0.5
+Q5: 1.5
+Q6: 0.5
 
-Homework Score
-Q1:2
-Q2:0
-Q4:0
-Q5:2
-Q6:0
+Homework Scores
+Q1: 2
+Q2: 0
+Q4: 0
+Q5: 0
+5Bonus: 2
+Q6: 0
+LatePenalty: 
 
-Homework Score Bounded by Half Deficit
-Q1:0.5
-Q2:0
-Q4:0
-Q5:1.5
-Q6:0
+Effective Homework Scores
+Q1: 0.5
+Q2: 0
+Q4: 0
+Q5: 0
+5Bonus: 2
+Q6: 0
+LatePenalty: 
 
-NEW TOTAL:15
+NEW TOTAL: 15.5
