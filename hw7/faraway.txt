@@ -1,0 +1,8 @@
+7: Hillary Clinton, Woon-gyu Na
+7: Tamae Tsumori, Miranda Capulet
+7: Frits van Wenkop, Reginald Switz 
+7: Vladislav Krivenchuk, Cor van der Linden
+6: Prince Heinrich of Prussia, Sabine
+
+
+I altered my bfs code to print the actors with greater than six degrees of separation from the source. This was the simplest way that I could think of to solve the problem, and it is efficient enough for the purposes of the assignment.
