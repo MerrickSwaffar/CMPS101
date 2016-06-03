@@ -1,0 +1,14 @@
+Total score 5/8
+
+-1 bad submission
+
+Question 1 (0/1): Suppose you have an array-represented minheap as follows: 1,20,3,21,22,4,5; attempt to remove the 21. 
+Your algorithm will replace 21 with 5, giving array heap 1,20,3,5,22,4, and then attempt to min-heapify on the 5. Since it has no children, it is trivially a valid heap, and min-heapify terminates. However, the overall heap is not a valid minheap, since the children of 20 are 5 and 22, and 20>5. 
+The suggested solution (others exist) is to replace the target element with the end, and move it up or down as needed, i.e. 1,20,3,5,22,4 -> 1,5,3,20,22,4.
+Question 2 (2/2)
+Question 3 (2/2)
+Question 4 (2/3): 
+insert 1/1:
+delete 1/1:
+block delete 0/1:
+If the node with exactly target value does not exist, or if it is a leaf, then the delete will not work properly. Left children are easy to find and delete, going up isn't easy.
