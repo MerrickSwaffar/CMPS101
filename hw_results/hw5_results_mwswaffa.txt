@@ -1,6 +1,6 @@
-Total score 5/8
+Total score 5.5/8
 
--1 bad submission
+-0.5 bad submission
 
 Question 1 (0/1): Suppose you have an array-represented minheap as follows: 1,20,3,21,22,4,5; attempt to remove the 21. 
 Your algorithm will replace 21 with 5, giving array heap 1,20,3,5,22,4, and then attempt to min-heapify on the 5. Since it has no children, it is trivially a valid heap, and min-heapify terminates. However, the overall heap is not a valid minheap, since the children of 20 are 5 and 22, and 20>5. 
